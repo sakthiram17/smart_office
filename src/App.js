@@ -1,23 +1,45 @@
 import logo from './logo.svg';
 import './App.css';
-
+import ParkingSlots from './Pages/ParkingSlots';
+import Navbar from './Navbar/Navbar';
+import SideBar from './SideBar/SideBar'
+import { useState } from 'react';
+import Backdrop from './UI/Backdrop/Backdrop';
 function App() {
+  const [sidebaron,setSidebaron] = useState(false);
+  const offSideBar = ()=>{
+    setSidebaron(false)
+  }
+  const turnOnSideBar = ()=>{
+    setSidebaron(true)
+  }
+
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+       <Navbar 
+      off = {offSideBar}
+      active = {"Parking Slot"}
+      first = {"Smart"}
+      last = "Parking Slot"
+      header = "Smart Parking Slot"
+      expand = {turnOnSideBar}
+      list
+      = {["LogOut","Parking Slot","In-Out Times","Security Images"]}></Navbar>
+      <ParkingSlots></ParkingSlots>
+      <SideBar 
+      off = {offSideBar}
+      active = {"Parking Slot"}
+      first = {"Smart"}
+      last = "Parking Slot"
+      header = "Smart Parking Slot"
+      disabled = {!sidebaron}
+      list
+      = {["LogOut","Parking Slot","In-Out Times","Security Images"]}></SideBar>
+    <Backdrop
+    off = {offSideBar}
+    on = {sidebaron}
+    ></Backdrop>
     </div>
   );
 }

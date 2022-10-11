@@ -1,0 +1,67 @@
+.CardElement{
+  
+    color:black;
+}
+.CardHeader{
+   
+    color:var(--primary-text);
+    font-weight: 900;
+
+}
+.Card{
+    background-color: var(--card-bg);
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 4px;
+    border-radius: 10px;
+    padding: 20px;
+    color:var(--primary-text);
+    width: min(500px,45vw);
+    margin-bottom: 20px;
+    opacity: 0.8;
+    transition: 0.15s;
+    box-sizing: border-box;
+    margin:4%;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    background-color: rgba(255, 255, 255, .15);  
+}
+.CardImage{
+    min-height: 200px;
+    width: min(400px,40vw);
+    padding: 20px;
+}
+.Card:hover{
+    transform: scale(1.1);
+
+}
+.Card a{
+    overflow: wrap;
+    text-decoration: none;
+}
+.card-a{
+    text-decoration: none;
+}
+@media (max-width:600px)
+{
+    .Card{
+        margin: auto;
+        margin-top:10%;
+        margin-bottom:10%;
+        width: 90%;
+    }
+}
+.card-content{
+    font-weight: bold;
+    color:black;
+
+}
+.Card a{
+    color:var(--primary-color);
+    
+}
+.card-content{
+    text-align: center;
+}
+html{
+
+}

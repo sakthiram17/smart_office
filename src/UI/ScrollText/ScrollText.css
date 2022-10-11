@@ -1,0 +1,10 @@
+.ScrollText{
+color : var(--navtext-alt);
+padding: 20px;
+display: inline;
+width: 50vw;
+font-size: 30px;
+margin:0;
+padding:0;
+
+}

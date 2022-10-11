@@ -1,0 +1,47 @@
+.parking-slot-page{
+    margin-left:auto;
+    margin-right: auto;
+    margin-top: 10%;
+    width:min(80vw,1600px);
+    background-color: ghostwhite;
+
+}
+.parking-slots-grid{
+   
+    border-radius: 0.5rem;
+    
+}
+.parking-slot-card{
+   margin:5%;
+   padding:5%;
+}
+.parking-slot{
+    background-color: rgb(255, 248, 248);
+    font-weight: bold;
+    color:white;
+
+    display:inline-block;
+    margin:auto;
+    margin: 3rem;
+    min-height: 8rem;
+    min-width: 8rem;
+    border-radius: 1rem;
+    font-size: 2rem;
+    line-height: 8rem;
+    background-color: rgb(94, 255, 0) ;
+    border:solid rgb(51, 241, 18) 0.2rem;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 2px 6px, rgba(0, 0, 0, 0.24) 0px 2px 4px;
+    text-align: center;
+    vertical-align: middle;
+    transition:0.15s;
+}
+.parking-slot:hover{
+    transform:scale(1.1);
+    
+}
+.filled{
+    background-color: rgb(249, 14, 14);
+    border:solid rgb(249, 14, 14) 0.2rem;
+
+    
+}

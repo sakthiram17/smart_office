@@ -12,6 +12,24 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+:root{
+  --primary-nav :whitesmoke;
+  --secondary-text: #f5cac2;
+  --secondary-nav : #e65100;
+  --primary-color : #303179;
+  --primary-color-50 : rgb(48, 49, 121,0.5);
+  --secondary-color : rgb(20, 24, 80);
+  --main-bg : #ededed;
+  --secondary-nav-50 : rgb(48, 0, 193,0.5);;
+  --secondary-color-50 : rgb(20, 24, 80,0.5);
+  --navtext:black;
+  --navtext-alt :rgb(230, 20, 0);
+  --card-bg : rgb(247, 247, 255,0.5);
+  --primary-text : black;
+  --card-box : #ccc;
+  --text-alt: #ff7158;
+  --card-hover: #ff1600;
+}
 
 .App-header {
   background-color: #282c34;

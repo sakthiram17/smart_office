@@ -1,0 +1,19 @@
+.Image{
+ 
+}
+.mainImage{
+    height: 400px;
+    width: 400px;
+    display: inline;
+    margin: auto;
+}
+@media (max-width:600px)
+{
+.mainImage{
+    height: 300px;
+    width: 300px;
+    display: block;
+    
+}
+
+}
