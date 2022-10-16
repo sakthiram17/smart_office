@@ -61,6 +61,7 @@ const ParkingSlots = (props)=>{
            >
 
            </Card>
+           <div className = 'anti-flow'>
            {parkingSlots.map((ele, index)=>{
             return <ParkingSlot no = {index+1} 
             free = {ele}
@@ -71,6 +72,7 @@ const ParkingSlots = (props)=>{
            })
            }
            
+          </div>
           </div>
         </div>
         )
