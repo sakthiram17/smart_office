@@ -4,12 +4,13 @@ import {useEffect} from "react"
 import axios from "axios"
 import { useState } from "react";
 import Card from "./Card";
+
 const ParkingSlots = (props)=>{
     const [parkingSlots,UpdateParkingSlots] = useState([])
     const [free,setFree ] = useState(0)
     useEffect(()=>{
         
-        const getData = async()=>{
+        const Interval = setInterval( ()=>{const getData = async()=>{
             let resp;
             try{
                 resp = await axios.get("https://parkingslot-690a3-default-rtdb.firebaseio.com/ParkingSlots.json",
@@ -46,7 +47,7 @@ const ParkingSlots = (props)=>{
             UpdateParkingSlots(tempList)
         }
        setData();
-
+    },1000)
     },[])
 
     return(
@@ -64,7 +65,7 @@ const ParkingSlots = (props)=>{
            <div className = 'anti-flow'>
            {parkingSlots.map((ele, index)=>{
             return <ParkingSlot no = {index+1} 
-            free = {ele}
+            free = {ele==='open'?true:false}
             key = {index}
             >
 

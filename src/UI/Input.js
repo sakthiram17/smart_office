@@ -2,9 +2,16 @@ import { useReducer } from "react"
 import "./Input.css"
 import {useState,useEffect} from "react"
 import { useRef } from "react"
-
-
-
+// props
+// type = number,text,password,email,select
+// name = name of the field
+// label
+//placeholder
+//invalid text
+//pos = indicates which is the position of the input element in the page
+// updateValidity (pos,current_value)
+// use updavalidty from parent element to get the output value of the form elements
+// add list of options prop for select element
 const Input = (props)=>{
     let hide = {
         display : 'inline-block'
@@ -73,6 +80,20 @@ const Input = (props)=>{
                 onChange = {onChangeHandler}
                 ></input>
     }
+    else if(props.type == 'email')
+    {
+        temp = 
+        <input
+        type = "email"
+        ref = {content}
+        id = {props.name}
+        name = {props.name}
+        value = {value}
+        className = {!isValid&& !isFocused?'invalid':''}
+        onChange = {onChangeHandler}
+        ></input>
+
+    }
     else if(props.type === 'password')
     {    
         temp = 
@@ -87,10 +108,32 @@ const Input = (props)=>{
         ></input>
 
     }
+    else if(props.type==='select')
+    {
+        temp = 
+        <div className = 'select-wrapper'>
+        <select
+        name = {props.name}
+        id = {props.name}
+        value = {value}
+        className = {'custom-select'}
+        onChange = {onChangeHandler}
+        >
+            {props.options.map(ele=>{
+                return <option value = {ele}>{ele}</option>
+            })}
+        </select>
+        </div>
+
+    }
     else{
        temp = (<div>Invalid Props sent to Input Element</div>)
     }
     useEffect(()=>{
+        if(props.type==='select')
+        {
+            return
+        }
         content.current.addEventListener('focus',(event)=>{
             if(document.activeElement===event.target)
             {
@@ -127,7 +170,12 @@ const Input = (props)=>{
         })
               
     },[value])
-   
+    if(props.type == 'select')
+    {
+        return temp
+    }
+
+
     return (
         <div className = "form-input">
             <label htmlFor = {props.name} className = "plabel">{props.label}</label>

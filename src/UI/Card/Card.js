@@ -1,5 +1,14 @@
 import React from "react";
 import "./Card.css"
+/*
+Two types 
+Simple add prop type = 'simple' to get it
+  returns a normal card with children inside it
+Complex (default)
+returns card with a link and possibliity add image
+  props
+  imgsrc,header,text,link,onClick
+*/
 const Card = (props)=>{
     let image = null;
     if(props.type ==='simple')

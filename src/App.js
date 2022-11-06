@@ -4,7 +4,9 @@ import ParkingSlots from './Pages/ParkingSlots';
 import Navbar from './Navbar/Navbar';
 import SideBar from './SideBar/SideBar'
 import { useState } from 'react';
+import Login from './Pages/Login';
 import Backdrop from './UI/Backdrop/Backdrop';
+import SignIn from './Pages/SignIn';
 function App() {
   const [sidebaron,setSidebaron] = useState(false);
   const offSideBar = ()=>{
@@ -40,6 +42,7 @@ function App() {
     off = {offSideBar}
     on = {sidebaron}
     ></Backdrop>
+   
     </div>
   );
 }
